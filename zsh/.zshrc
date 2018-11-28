@@ -26,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 eval `keychain --eval id_rsa --quiet`
 export EDITOR='vim'
-export VISUAL='code'
+export VISUAL='vim'
 
 alias bw="wal -i $HOME/.wallpapers"
 

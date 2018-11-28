@@ -1,7 +1,8 @@
 [colors]
-icon         = #4ec2f7
-fg          = #002636
-bg	    = #e4e4e4
+icon        = ${xrdb:color3:#4ec2f7}
+fg          = ${xrdb:color0:#002636}
+bg	    = ${xrdb:color7:#e4e4e4}
+text	    = ${xrdb:color7:#ccffffff}
 
 [bar/top]
 monitor = ${env:MONITOR:eDP1}
@@ -13,7 +14,7 @@ scroll-down = i3wm-wsprev
 
 ;Makes the background semi-transparent using ARBG Values
 background = #80000000
-foreground = #ccffffff
+foreground =  ${colors.text}
 
 line-color = ${bar/bottom.background}
 line-size = 16
@@ -111,8 +112,16 @@ ramp-coreload-7-foreground = #ff5555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+format =   <label>
+format-alt = <label-alt>
+date = %Y-%m-%d%
+date-alt = %A, %d %B %Y
+time = %H:%M%
+time-alt = %H:%M:%S%
+label = %date% %time%
+label-foreground = ${xrdb:color5:#222}
+label-alt = %date-alt% %time-alt%
+label-alt-foreground = ${xrdb:color5:#222}
 
 [module/memory]
 type = internal/memory
