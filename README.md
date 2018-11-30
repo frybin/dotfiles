@@ -23,7 +23,7 @@ sudo rankmirrors -n 50 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlis
 
 ### Lock Setup
 sudo mkdir /usr/local/build
-cd build
+cd /usr/local/build
 sudo git clone --recursive https://github.com/yvbbrjdr/i3lock-fancy-rapid
 cd i3lock-fancy-rapid
 sudo make
