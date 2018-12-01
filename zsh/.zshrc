@@ -29,6 +29,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 alias bw="wal -i $HOME/.wallpapers"
+alias um="udiskie-umount -e -d -a"
 
 (cat ~/.cache/wal/sequences &)
 
