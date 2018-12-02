@@ -190,4 +190,5 @@ client.placeholder          $magenta $magenta   $silver  $magenta
 exec --no-startup-id compton --config ~/.config/compton/config
 exec --no-startup-id conky --daemonize --pause=5
 exec --no-startup-id udiskie
+exec_always --no-startup-id twmnd
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;

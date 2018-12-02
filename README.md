@@ -1,5 +1,4 @@
-### Programs to install after fresh install of arch
-zsh xorg i3-gaps pcsc-tools yubico-yubioath-desktop-git nerd-fonts-complete terminator rofi compton python-pywal feh conky ranger ccid opensc lsof scrot i3-lock-fancy arandr ntp light-git bluez bluez-utils w3m undiskie htop network-manager-applet foxitreader wireshark-qt keychain gnupg stow cups system-config-printer neofetch vim pacman-contrib neofetch powertop zip unzip unrar p7zip speedtest-cli firefox linux linux-headers networkmanager openssh cronie xdg-user-dirs dosfstools ntfs-3g btrfs-progs exfat-utils autofs fuse3 fuseiso alsa-utils also-plugins pulseaudio pulseaudio-alsa pulseaudio-bluetooth cups-pdf qbittorrent thunderbird vlc code networkmanager-openvpn lastpass-cli intel-ucode
+### Run ./install.sh after fresh install of arch to install most packages
 
 ### If not enough temp space for install
 sudo mount -o remount,size=12G,noatime /tmp
@@ -22,9 +21,21 @@ sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 sudo rankmirrors -n 50 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
 ### Lock Setup
-sudo mkdir /usr/local/build
-cd /usr/local/build
-sudo git clone --recursive https://github.com/yvbbrjdr/i3lock-fancy-rapid
-cd i3lock-fancy-rapid
-sudo make
-sudo cp i3lock-fancy-rapid /usr/bin
+sudo mkdir /usr/local/build 
+cd /usr/local/build 
+sudo git clone --recursive https://github.com/yvbbrjdr/i3lock-fancy-rapid 
+cd i3lock-fancy-rapid 
+sudo make 
+sudo cp i3lock-fancy-rapid /usr/bin 
+
+### Crontab Jobs
+*/5 * * * * /home/frybin/.config/twmn/check-battery.sh >/dev/null 2>&1
+
+### Setup Notification
+sudo vim /usr/share/dbus-1/services/org.freedesktop.Notifications.service
+'''
+[D-BUS Service]
+Name=org.freedesktop.Notifications
+Exec=/usr/lib/notification-daemon-1.0/notification-daemon
+'''
+
