@@ -38,4 +38,4 @@ sudo vim /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 Name=org.freedesktop.Notifications
 Exec=/usr/lib/notification-daemon-1.0/notification-daemon
 '''
-
+systemctl start twmnd.service
