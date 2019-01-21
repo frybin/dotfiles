@@ -119,7 +119,7 @@ for_window [class="^Arandr$"] floating enable
 bindsym $mod+shift+x exec i3lock-fancy-rapid 5 3
 
 #ranger
-bindsym $mod+c exec terminator -e "(cat ~/.cache/wal/sequences &) && fff"
+bindsym $mod+c exec terminator -e "(cat ~/.cache/wal/sequences &) && ranger"
 
 # Multimedia Keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
