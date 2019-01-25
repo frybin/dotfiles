@@ -20,7 +20,7 @@ git config --global user.signingkey <key-id>
 sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 sudo rankmirrors -n 50 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
 
-### Lock Setup
+### I3 Lock Setup
 sudo mkdir /usr/local/build 
 cd /usr/local/build 
 sudo git clone --recursive https://github.com/yvbbrjdr/i3lock-fancy-rapid 
@@ -39,3 +39,10 @@ Name=org.freedesktop.Notifications
 Exec=/usr/lib/notification-daemon-1.0/notification-daemon
 '''
 systemctl start twmnd.service
+
+### Setup Kitty Profile on remote ssh Systems
+kitty +kitten ssh username@hostname
+
+### Edit LightDM Theme
+sudo vim /etc/lightdm/lightdm-webkit2-greeter.conf
+cd /var/lib/AccountsService/users
