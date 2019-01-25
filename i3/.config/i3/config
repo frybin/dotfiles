@@ -135,7 +135,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 #Increases Brightnes
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 #Decreased Brightness
 
 #screenshot
-bindsym $mod+Shift+s exec "scrot ~/Pictures/%b%d::%H:%M:%S.png"
+bindsym $mod+Shift+s exec terminator -e "scrot -s ~/Pictures/%b%d::%H:%M:%S.png"
 bindsym $mod+Shift+w exec "wal -i $HOME/.wallpapers -o $HOME/.config/conky/pywal_conky.py"
 
 # Reload the configuration file

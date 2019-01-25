@@ -1,0 +1,105 @@
+@import "/home/frybin/.cache/wal/colors-waybar.css";
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(43, 48, 59, 0.5);
+    border-bottom: 3px solid @background;
+    color: @foreground;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: @color8;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    color: @foreground;
+    border-bottom: 3px solid @color11;
+}
+
+#mode {
+    background: transparent;
+    border-bottom: 3px solid @color15;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 3px;
+    margin: 0 2px;
+}
+
+#clock {
+    background-color: transparent;
+    border-bottom: 3px solid @color1;
+    color: @foreground;
+}
+
+#battery {
+    border-bottom: 3px solid green;
+}
+
+#battery.charging {
+    border-bottom: 3px solid white;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+    border-bottom: 3px solid @color2;
+    color: @foreground;
+}
+
+#memory {
+    border-bottom: 3px solid @color3;
+    color: @foreground;
+}
+
+#network {
+    border-bottom: 3px solid @color4;
+    color: @foreground;
+}
+
+#network.disconnected {
+    color: crimson;
+}
+
+#pulseaudio {
+    border-bottom: 3px solid @color5;
+    color: @foreground;
+
+}
+
+#pulseaudio.muted {
+    background: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-spotify {
+    border-bottom: 3px solid #66cc99;
+}
+
+#tray {
+    background-color: #2980b9;
+}
