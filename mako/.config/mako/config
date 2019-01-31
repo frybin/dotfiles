@@ -1,1 +1,7 @@
 default-timeout=3000
+background-color=#576369
+text-color=#B1BAB8
+font=monospace 13
+markup=1
+# WALM color1 576369
+# WALM color7 B1BAB8
