@@ -76,8 +76,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 #Brightness Keys
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 #Increases Brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 #Decreased Brightness
+bindsym $mod+Ctrl+Right exec light -A 5 #Increases Brightness
+bindsym $mod+Ctrl+Left exec  light -U 5 #Decreased Brightness
 
 #screenshot
 bindsym $mod+Shift+w exec wal -i $HOME/.wallpapers -o $HOME/.config/mako/pywal_mako.py && makoctl reload && pkill waybar && waybar 
