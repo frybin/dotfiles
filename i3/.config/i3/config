@@ -191,4 +191,6 @@ exec --no-startup-id compton --config ~/.config/compton/config
 exec --no-startup-id conky --daemonize --pause=5
 exec --no-startup-id udiskie
 exec_always --no-startup-id twmnd
+exec always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
+

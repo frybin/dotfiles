@@ -193,3 +193,4 @@ exec waybar
 #exec --no-startup-id conky --daemonize --pause=5
 exec  udiskie &
 exec mako
+exec /usr/lib/polkit-kde-authentication-agent-1
