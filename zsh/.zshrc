@@ -28,7 +28,7 @@ eval `keychain --eval id_rsa --quiet`
 export EDITOR='vim'
 export VISUAL='vim'
 
-alias cbw="wal -i $HOME/.wallpapers -g -o $HOME/.config/conky/pywal_conky.py"
+alias cbw="wal -i $HOME/.wallpapers -o $HOME/.config/conky/pywal_conky.py"
 alias um="udiskie-umount -e -d -a"
 
 (cat ~/.cache/wal/sequences &)

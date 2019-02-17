@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo mount -o remount,size=12G,noatime /tmp
 
-trizen -Su zsh pcsc-tools yubico-yubioath-desktop-git rofi python-pywal ccid 
-opensc lsof ntp light-git bluez bluez-utils udiskie htop foxitreader \
+trizen -Sy zsh pcsc-tools yubico-yubioath-desktop-git rofi python-pywal ccid \
+opensc lsof ntp light-git bluez bluez-utils udiskie htop \
 wireshark-qt keychain gnupg stow cups system-config-printer neofetch vim \
 pacman-contrib powertop zip unzip unrar p7zip speedtest-cli firefox linux \
 linux-headers networkmanager openssh cronie xdg-user-dirs dosfstools ntfs-3g \

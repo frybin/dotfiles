@@ -16,7 +16,7 @@ font pango:FuraCode Nerd Font 11
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -106,10 +106,10 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 
 # Always open some programs on specified workspace
 #for_window [class="Firefox"] move to workspace $workspace1
-for_window [class="Code"] move to workspace $workspace2
+#for_window [class="Code"] move to workspace $workspace2
 #for_window [class="Terminator"] move to workspace $workspace3
 #for_window [class="Nautilus"] move to workspace $workspace4
-for_window [class="Spotify"] move to workspace $workspace8
+#for_window [class="Spotify"] move to workspace $workspace8
 
 # Enable float for some windows
 for_window [class="^Pavucontrol$"] floating enable
@@ -119,7 +119,7 @@ for_window [class="^Arandr$"] floating enable
 bindsym $mod+shift+x exec i3lock-fancy-rapid 5 3
 
 #ranger
-bindsym $mod+c exec terminator -e "(cat ~/.cache/wal/sequences &) && ranger"
+bindsym $mod+c exec kitty -e ~/.config/ranger/launch.sh
 
 # Multimedia Keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
