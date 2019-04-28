@@ -3,7 +3,7 @@
   enabled_plugins = CustomCommandsMenu, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   inactive_color_offset = 1.0
   tab_position = hidden
-  title_font = Hack Nerd Font Mono 14
+  title_font = Hack Nerd Font Mono 10
   title_inactive_bg_color = "#263647"
   title_inactive_fg_color = "#ff0000"
   title_receive_bg_color = "#c90047"
@@ -26,7 +26,7 @@
   [[default]]
     background_color = "#263647"
     cursor_color = "#bbbbbb"
-    font = MesloLGMDZ Nerd Font Mono 12
+    font = RobotoMono Nerd Font Mono 8
     foreground_color = "#ffffff"
     palette = "#000000:#cd0000:#00cd00:#cdcd00:#0000cd:#cd00cd:#00cdcd:#faebd7:#404040:#ff0000:#00ff00:#ffff00:#0000ff:#ff00ff:#00ffff:#ffffff"
     scrollback_infinite = True
