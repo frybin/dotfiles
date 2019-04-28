@@ -16,7 +16,7 @@ font pango:FuraCode Nerd Font 11
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec terminator
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -116,7 +116,7 @@ for_window [class="^Pavucontrol$"] floating enable
 for_window [class="^Arandr$"] floating enable
 
 #i3lock-fancy-rapid
-bindsym $mod+shift+x exec i3lock-fancy-rapid 5 3
+bindsym $mod+shift+x exec --no-startup-id blurlock
 
 #ranger
 bindsym $mod+c exec terminator -e "(cat ~/.cache/wal/sequences &) && ranger"
@@ -135,8 +135,11 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5 #Increases Brightnes
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5 #Decreased Brightness
 
 #screenshot
-bindsym $mod+Shift+s exec terminator -e "scrot -s ~/Pictures/%b%d::%H:%M:%S.png"
+#bindsym $mod+Shift+s exec terminator -e "i3-scrot -s"
 bindsym $mod+Shift+w exec "wal -i $HOME/.wallpapers -o $HOME/.config/conky/pywal_conky.py"
+bindsym Print exec --no-startup-id i3-scrot
+#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+#bindsym $mod+Shift+Print exec --no-startup-id i3-scrot -s
 
 # Reload the configuration file
 bindsym $mod+Shift+c reload
@@ -191,6 +194,12 @@ exec --no-startup-id compton --config ~/.config/compton/config
 exec --no-startup-id conky --daemonize --pause=5
 exec --no-startup-id udiskie
 exec_always --no-startup-id twmnd
-exec always --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
-
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id clipit
+exec --no-startup-id blueman-applet
+exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id wal -R
+exec_always --no-startup-id fix_xcursor
