@@ -25,8 +25,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 eval `keychain --eval id_rsa --quiet`
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR=vim
+export VISUAL=vim
 
 alias cbw="wal -i $HOME/.wallpapers -g -o $HOME/.config/conky/pywal_conky.py"
 alias um="udiskie-umount -e -d -a"
