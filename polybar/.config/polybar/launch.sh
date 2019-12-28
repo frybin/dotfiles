@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+#!/usr/bin/env sh
 
 # Terminate already running bar instances
 killall -q polybar
@@ -13,10 +14,10 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 if type "xrandr"; then
 	for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-		MONITOR=$m polybar -c $HOME/.config/polybar/config top &
-		MONITOR=$m polybar -c $HOME/.config/polybar/config bottom &
+		MONITOR=$m polybar -c $HOME/.config/polybar/config.ini top &
+		MONITOR=$m polybar -c $HOME/.config/polybar/config.ini bottom &
 	done
 else
-	polybar -c $HOME/.config/polybar/config top &
-        polybar -c $HOME/.config/polybar/config bottom &
+	polybar -c $HOME/.config/polybar/config.ini top &
+        polybar -c $HOME/.config/polybar/config.ini bottom &
 fi

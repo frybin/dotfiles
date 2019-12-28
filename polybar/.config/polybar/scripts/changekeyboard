@@ -1,0 +1,13 @@
+#!/bin/bash
+
+lang=$(setxkbmap -query | grep layout | sed 's/layout.* //g')
+
+if [[ $lang == "ru" ]]
+then
+    setxkbmap us
+    notify-send Layout US
+elif [[ $lang == "us" ]]
+then
+    setxkbmap ru
+    notify-send Layout RU
+fi
