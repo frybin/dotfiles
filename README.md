@@ -29,7 +29,7 @@ sudo make
 sudo cp i3lock-fancy-rapid /usr/bin 
 
 ### Crontab Jobs
-*/5 * * * * /home/frybin/.config/twmn/check-battery.sh >/dev/null 2>&1
+*/5 * * * * /home/red/.config/twmn/check-battery.sh >/dev/null 2>&1
 
 ### Setup Notification
 sudo vim /usr/share/dbus-1/services/org.freedesktop.Notifications.service

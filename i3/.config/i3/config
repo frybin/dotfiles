@@ -35,6 +35,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
 # Change Background and recreate Color Theme
 bindsym XF86Favorites exec --no-startup-id wal -i $HOME/.wallpaper --iterative -o $HOME/.config/wal/done.sh
 
+# Change Monitor Layout
+bindsym $mod+XF86Favorites exec $HOME/.config/yoga/hotplug-monitor.sh
+
 # Use Stylus to change screen rotation after button remapped
 bindsym XF86Launch1 exec --no-startup-id $HOME/.config/yoga/rotate-r.sh
 bindsym XF86Launch2 exec --no-startup-id $HOME/.config/yoga/rotate-n.sh
