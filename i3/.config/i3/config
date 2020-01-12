@@ -151,7 +151,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload #Reloads I3 Config
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -187,7 +187,7 @@ bindsym $mod+r mode "resize"
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -gpf Comic-Sans-MS --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy -gpf Hack-Bold-Italic-Nerd-Font-Complete --nofork
 exec --no-startup-id $HOME/.config/yoga/remap.sh
 exec --no-startup-id compton --config ~/.config/compton/config
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
