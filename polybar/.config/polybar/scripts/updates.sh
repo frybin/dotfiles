@@ -9,18 +9,18 @@ while true; do
     get_total_updates
 
     # notify user of updates
-    if hash notify-send &>/dev/null; then
-        if (( UPDATES > 50 )); then
-            notify-send -u critical \
-                "You really need to update!!" "$UPDATES New packages"
-        elif (( UPDATES > 25 )); then
-            notify-send -u normal \
-                "You should update soon" "$UPDATES New packages"
-        elif (( UPDATES > 2 )); then
-            notify-send -u low \
-                "$UPDATES New packages"
-        fi
-    fi
+    # if hash notify-send &>/dev/null; then
+    #    if (( UPDATES > 50 )); then
+    #        notify-send -u critical \
+    3            "You really need to update!!" "$UPDATES New packages"
+    #    elif (( UPDATES > 25 )); then
+    #        notify-send -u normal \
+    #            "You should update soon" "$UPDATES New packages"
+    #    elif (( UPDATES > 2 )); then
+    #        notify-send -u low \
+    #            "$UPDATES New packages"
+    #    fi
+    #fi
 
     # when there are updates available
     # every 10 seconds another check for updates is done
