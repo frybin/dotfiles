@@ -1,2 +1,2 @@
 xset b off
-exec i3
+exec dbus-launch --autolaunch=$(cat /var/lib/dbus/machine-id) i3

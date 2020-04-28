@@ -195,7 +195,7 @@ bindsym $mod+r mode "resize"
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh --nofork
 exec --no-startup-id $HOME/.config/yoga/remap.sh
-#exec --no-startup-id picom --config ~/.config/picom/config
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
 exec --no-startup-id dockd --daemon
 exec --no-startup-id wal -R
