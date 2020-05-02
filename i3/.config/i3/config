@@ -199,3 +199,5 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
 exec --no-startup-id dockd --daemon
 exec --no-startup-id wal -R
+exec --no-startup-id i3-battery-popup -L 15 -n
+
