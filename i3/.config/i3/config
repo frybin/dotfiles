@@ -22,15 +22,51 @@ for_window [class="^.*"] border pixel 3
 font pango:FuraCode Nerd Font 11
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Adjust volume 
+# -Ctrl is used to control the microphone
+# -Shift is used to change values at higher rate
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/volume.sh up 1
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/volume.sh down 1
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/volume.sh up 10
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/volume.sh down 10
+bindsym XF86AudioMute exec --no-startup-id $HOME/.config/i3/scripts/volume.sh mute
+
+bindsym Ctrl+XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/microphone.sh up 1
+bindsym Ctrl+XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/microphone.sh down 1
+bindsym Ctrl+Shift+XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/i3/scripts/microphone.sh up 10
+bindsym Ctrl+Shift+XF86AudioLowerVolume exec --no-startup-id $HOME/.config/i3/scripts/microphone.sh down 10
+bindsym Ctrl+XF86AudioMute exec --no-startup-id $HOME/.config/i3/scripts/microphone.sh mute
 
 # Use light to adjust screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+# bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+# bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+
+# Sreen brightness/temperature controls
+# -Ctrl is used to control the temperature
+# -Shift is used to change values at higher rate
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh increase
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh decrease
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh increase 10
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh decrease 10
+bindsym XF86ScreenSaver exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh set 1
+bindsym Shift+XF86ScreenSaver exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh set 100
+
+bindsym Ctrl+XF86MonBrightnessUp exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh redshift increase
+bindsym Ctrl+XF86MonBrightnessDown exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh redshift decrease
+bindsym Ctrl+Shift+XF86MonBrightnessUp exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh redshift increase 400
+bindsym Ctrl+Shift+XF86MonBrightnessDown exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh redshift decrease 400
+bindsym Ctrl+XF86ScreenSaver exec --no-startup-id $HOME/.config/i3/scripts/brightness.sh redshift toggle
+
+# Media player controls
+bindsym XF86AudioPlay exec --no-startup-id $HOME/.config/i3/scripts/playerctl.sh play-pause
+bindsym XF86AudioStop exec --no-startup-id $HOME/.config/i3/scripts/playerctl.sh stop
+bindsym XF86AudioNext exec --no-startup-id $HOME/.config/i3/scripts/playerctl.sh next
+bindsym XF86AudioPrev exec --no-startup-id $HOME/.config/i3/scripts/playerctl.sh previous
 
 # Change Background and recreate Color Theme
 bindsym XF86Favorites exec --no-startup-id wal -i $HOME/.wallpaper --iterative -o $HOME/.config/wal/done.sh
@@ -45,7 +81,7 @@ bindsym XF86Launch2 exec --no-startup-id $HOME/.config/yoga/rotate-n.sh
 # Start File Manager
 bindsym $mod+c exec terminator -e "(cat ~/.cache/wal/sequences &) && ranger"
 
-bindsym Print exec i3-scrot -w
+# bindsym Print exec i3-scrot -w
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -61,7 +97,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec ~/.config/rofi/rofi.sh
 
 # lock screen
-bindsym $mod+Shift+x exec loginctl lock-session 
+# bindsym $mod+Shift+x exec loginctl lock-session 
+bindsym $mod+l exec $HOME/.config/i3/scripts/lockscreen.sh --lock
 
 # change focus
 bindsym $mod+j focus left
@@ -193,11 +230,30 @@ bindsym $mod+r mode "resize"
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh --nofork
-exec --no-startup-id $HOME/.config/yoga/remap.sh
-exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
-exec --no-startup-id dockd --daemon
+# exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock.sh --nofork
+# exec --no-startup-id dockd --daemon
+
+# Setup lockscreen
+exec xset s 600 300 
+exec xss-lock -n "$HOME/.config/i3/scripts/brightness.sh screensaver" -l -- $HOME/.config/i3/scripts/lockscreen.sh --suspend
+
+# Restore Redshift Settings
+exec $HOME/.config/i3/scripts/restoreRedshift.sh
+
+# Restore Wallpaper
 exec --no-startup-id wal -R
+
+# Start Authenticator
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Remap Keys for Yoga Pen
+exec --no-startup-id $HOME/.config/yoga/remap.sh
+
+# Launch Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
+
+# Run Battery Notification
 exec --no-startup-id i3-battery-popup -L 15 -n
 
+# Mute Mic on Startup
+exec_always amixer sset Capture nocap

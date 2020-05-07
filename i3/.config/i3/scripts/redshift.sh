@@ -1,0 +1,2 @@
+export REDSHIFT_STATUS=on
+export REDSHIFT_TEMP=3400
