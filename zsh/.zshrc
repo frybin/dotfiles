@@ -103,6 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # eval $(keychain --eval --quiet id_rsa)
+export KEYID=0x49BEDEB23C8DB989
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+
+alias mntprivate='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
+alias mntpublic='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
+alias mntvideo='sudo mount freenas.redrybin.local:/mnt/DataDrives/Videos  /mnt/nfs'

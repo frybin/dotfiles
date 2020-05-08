@@ -145,7 +145,7 @@ function printTemperature() {
 		fi
 	fi
 #	echo "%{F$color}$suffix $body%{B- F-}"
-	echo "%{F$color}$REDSHIFT_TEMP K%{B- F-}"
+	echo " $suffix $REDSHIFT_TEMP K "
 }
 
 function screensaver() {

@@ -1,2 +1,2 @@
 #!/bin/bash
-yay -Sy firefox qpdfview hamsket-bin spotify
+yay -Sy firefox qpdfview hamsket-bin spotify code
