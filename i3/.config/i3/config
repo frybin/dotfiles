@@ -101,10 +101,10 @@ bindsym $mod+d exec ~/.config/rofi/rofi.sh
 bindsym $mod+l exec $HOME/.config/i3/scripts/lockscreen.sh --lock
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
