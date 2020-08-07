@@ -108,6 +108,10 @@ export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 
+export PATH="$PATH:$HOME/go/bin"
+export GOBIN="$HOME/go/bin"
+export GOPATH="$HOME/go"
+
 alias mntprivate='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
 alias mntpublic='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
 alias mntvideo='sudo mount freenas.redrybin.local:/mnt/DataDrives/Videos  /mnt/nfs'
