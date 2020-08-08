@@ -1,2 +1,2 @@
 #!/bin/bash
-yay -Sy firefox qpdfview hamsket-bin spotify code
+yay -Sy --noconfirm firefox qpdfview hamsket-bin spotify code qtfm libappindicator-gtk3 xournalpp sidequest-bin 

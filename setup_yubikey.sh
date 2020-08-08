@@ -1,4 +1,5 @@
 #!/bin/bash
-yay -Su pcsc-tools yubico-yubioath-desktop-git ccid yubikey-manager-qt
+yay -Su pcsc-tools yubioath-desktop ccid yubikey-manager-qt gnupg dbus-broker
 sudo systemctl enable pcscd.service
 sudo systemctl start pcscd.service
+sudo systemctl enable --now dbus-broker.service

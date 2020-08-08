@@ -6,6 +6,6 @@ fi
 if [ -e $HOME/.config/polybar/launch.sh ]; then
   	$HOME/.config/polybar/launch.sh 
 fi
-if [ -e $HOME/Documents/Pywalfox/daemon/pywalfox.py ]; then
-	$HOME/Documents/Pywalfox/daemon/pywalfox.py update
+if [ -e $HOME/.local/bin/pywalfox ]; then
+	$HOME/.local/bin/pywalfox update
 fi
