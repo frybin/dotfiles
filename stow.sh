@@ -8,4 +8,4 @@ stow terminator
 stow wal
 stow x
 stow yoga
-stow dnust
+stow dunst
