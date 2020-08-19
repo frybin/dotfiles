@@ -116,3 +116,4 @@ alias cleargpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
 alias mntprivate='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
 alias mntpublic='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
 alias mntvideo='sudo mount freenas.redrybin.local:/mnt/DataDrives/Videos  /mnt/nfs'
+

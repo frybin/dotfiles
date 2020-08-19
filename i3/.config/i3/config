@@ -243,6 +243,9 @@ exec $HOME/.config/i3/scripts/restoreRedshift.sh
 # Restore Wallpaper
 exec --no-startup-id wal -R
 
+# Restore Wallpaper
+exec --no-startup-id birdtray &
+
 # Start Authenticator
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
