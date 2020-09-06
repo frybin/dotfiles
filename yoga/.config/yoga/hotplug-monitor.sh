@@ -41,6 +41,7 @@ function wait_for_monitor (){
  }
 
 dpcounter=0
+hdmicounter=0
 for t in ${monitors[@]}; do
   if [[ $dpcounter == 0 && $t == "DP"* ]]; then
     wait_for_monitor "DP1-3"
@@ -52,8 +53,14 @@ for t in ${monitors[@]}; do
     dpcounter=$((dpcounter+1))
   elif [[ $dpcounter > 0 && $t == "eDP"* ]]; then
     xrandr --output eDP1 --primary --mode 1920x1080 --pos 971x1080 --rotate normal
-  elif [[ $dpcounter == 0 && $t != "DP"* ]]; then
-    xrandr --output DP1-2 --off --output DP1-3 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+  elif [[ $dpcounter == 0 && $t == "HDMI1" ]]; then
+    wait_for_monitor "HDMI1"
+    xrandr --output HDMI1 --mode 1920x1080 --pos 1920x0 --rotate normal
+    hdmicounter=$((hdmicounter+1))
+  elif [[ $hdmicounter > 0 && $t == "eDP"* ]]; then
+    xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal 
+  elif [[ $dpcounter == 0 && $hdmicounter == 0 && $t == "eDP"* ]]; then
+    xrandr --output DP1-2 --off --output DP1-3 --off --output HDMI1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
   fi
 done
 
