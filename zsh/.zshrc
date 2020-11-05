@@ -119,3 +119,4 @@ alias mntvideo='sudo mount freenas.redrybin.local:/mnt/DataDrives/Videos  /mnt/n
 alias wghu='wg-quick up ~/wg/ArchyX1.conf'
 alias wghd='wg-quick down ~/wg/ArchyX1.conf'
 alias wghs='sudo wg'
+

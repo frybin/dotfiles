@@ -1,6 +1,12 @@
 [global_config]
   window_state = maximise
 [keybindings]
+[profiles]
+  [[default]]
+    font = FuraCode Nerd Font 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
 [layouts]
   [[default]]
     [[[child1]]]
@@ -10,9 +16,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    font = FuraCode Nerd Font 10
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    show_titlebar = False
