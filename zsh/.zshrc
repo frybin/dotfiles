@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -113,10 +120,9 @@ export GOBIN="$HOME/go/bin"
 export GOPATH="$HOME/go"
 
 alias cleargpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
-alias mntprivate='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
-alias mntpublic='sudo mount freenas.redrybin.local:/mnt/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
-alias mntvideo='sudo mount freenas.redrybin.local:/mnt/DataDrives/Videos  /mnt/nfs'
+alias mntprivate='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
+alias mntpublic='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
+alias mntvideo='sudo mount truenas.redrybin.local:/mnt/MainPool/DataDrives/Videos  /mnt/nfs'
 alias wghu='wg-quick up ~/wg/ArchyX1.conf'
 alias wghd='wg-quick down ~/wg/ArchyX1.conf'
 alias wghs='sudo wg'
-

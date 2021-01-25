@@ -234,7 +234,8 @@ bindsym $mod+r mode "resize"
 # exec --no-startup-id dockd --daemon
 
 # Setup lockscreen
-exec xset s 600 300 
+exec xset s 3600 3600
+exec xset dpms 3600 3600 3600  
 exec xss-lock -n "$HOME/.config/i3/scripts/brightness.sh screensaver" -l -- $HOME/.config/i3/scripts/lockscreen.sh --suspend
 
 # Restore Redshift Settings
@@ -257,6 +258,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &amp;
 
 # Run Battery Notification
 exec --no-startup-id i3-battery-popup -L 15 -n
+
+# Enable Bluetooth Process
+exec --no-startup-id bluetoothctl power on 
 
 # Mute Mic on Startup
 exec_always amixer sset Capture nocap
