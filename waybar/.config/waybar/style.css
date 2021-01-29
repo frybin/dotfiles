@@ -1,0 +1,179 @@
+@import "/home/red/.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: @background;
+    color: white;
+}
+
+#workspaces {
+	background-color: @background;
+	margin: 5px;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+#workspaces button {
+    padding: 0 10px;
+    color: @cursor;
+}
+
+#workspaces button.focused {
+    color: @color0;
+    background-color: @color8;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+	color: @color0;
+	border-radius: 5px;
+}
+
+#backlight, #clock, #battery, #pulseaudio, #network, #tray, #cpu, #temperature, #memory, #disk, #custom-updates {
+	color:  @background;
+	padding: 0px 10px;
+    margin: 5px 0px;
+    font-weight: 200;
+}
+
+#taskbar button{
+    color: @forground;
+}
+
+#taskbar button:hover {
+	color: @color0;
+	border-radius: 5px;
+}
+
+#custom-power {
+	color: #2e3440;
+	background-color: #bf616a;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 0px 10px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#backlight{
+    background-color: @color7;
+} 
+#clock{
+    background-color: @color2;
+} 
+#battery{
+    background-color: green;
+} 
+#battery.warning{
+    background-color: orange;
+} 
+#battery.critical{
+    background-color: red;
+} 
+#pulseaudio{
+    background-color: @color6;
+
+} 
+#network{
+    background-color: @color5;
+
+} 
+#cpu{
+    background-color: @color1;
+} 
+#temperature{
+    background-color: @color2;
+} 
+#memory{
+    background-color: @color3;
+} 
+#disk{
+    background-color: @color4;
+}
+#custom-updates{
+    background-color: @color8;
+}
+
+#custom-arrow1 {
+    font-size: 16px;
+    color: @color6;
+    background: transparent;
+    margin: 5px 0px;
+}
+
+#custom-arrow2 {
+    font-size: 16px;
+    color: @color7;
+    background: @color6;
+    margin: 5px 0px;
+}
+
+#custom-arrow3 {
+    font-size: 16px;
+    color: green;
+    background: @color7;
+    margin: 5px 0px;
+}
+
+#custom-arrow4 {
+    font-size: 16px;
+    color: @color5;
+    background: green;
+    margin: 5px 0px;
+}
+
+#custom-arrow5 {
+    font-size: 16px;
+    color: @color2;
+    background: @color5;
+    margin: 5px 0px;
+}
+
+#custom-arrow5-5 {
+    font-size: 16px;
+    color: @color8;
+    background: transparent;
+    margin: 5px 0px;
+}
+
+#custom-arrow6 {
+    font-size: 16px;
+    color: @color1;
+    background: @color8;
+    margin: 5px 0px;
+}
+
+#custom-arrow7 {
+    font-size: 16px;
+    color: @color2;
+    background: @color1;
+    margin: 5px 0px;
+}
+
+#custom-arrow8 {
+    font-size: 16px;
+    color: @color3;
+    background: @color2;
+    margin: 5px 0px;
+}
+
+#custom-arrow9 {
+    font-size: 16px;
+    color: @color4;
+    background: @color3;
+    margin: 5px 0px;
+}

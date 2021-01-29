@@ -119,6 +119,11 @@ export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
 export GOBIN="$HOME/go/bin"
 export GOPATH="$HOME/go"
 
+export MOZ_ENABLE_WAYLAND="1"
+export ECORE_EVAS_ENGINE="wayland_egl"
+export ELM_ENGINE="wayland_egl"
+
+
 alias cleargpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
 alias mntprivate='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
 alias mntpublic='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'

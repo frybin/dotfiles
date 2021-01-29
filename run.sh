@@ -1,7 +1,7 @@
 #!/bin/bash
 ./install.sh
 ./stow.sh
-./setup_zsh.sh
+#./setup_zsh.sh
 ./setup_i3.sh
 ./setup_yoga
 ./setup_display.sh

@@ -1,0 +1,9 @@
+scaling=fill
+clock
+timestr=%I:%M %p
+datestr=%A, %d %B
+indicator-x-position=1600
+indicator-y-position=925
+indicator-radius=350
+font-size=125
+text-color=2e3440
