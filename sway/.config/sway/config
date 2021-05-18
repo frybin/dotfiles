@@ -49,6 +49,7 @@ exec --no-startup-id wal -R
     output eDP-1 resolution 1920x1080 position 971,1080 background $wallpaper fill
     output "Goldstar Company Ltd 24EN33 304NDRFHD670" resolution 1920x1080 position 1920,0 background $wallpaper fill
     output "Acer Technologies K242HL T0FAA0018501" resolution 1920x1080 position 0,0 background $wallpaper fill
+    output "Acer Technologies Acer ET322QR 0x0000B767" resolution 1920x1080 position 971,0 background $wallpaper fill
 
 ### Idle configuration
 #
@@ -125,7 +126,7 @@ input "SYNA8004:00 06CB:CD8B Touchpad" {
 
     # Recolor PyWal
     bindsym XF86Favorites exec --no-startup-id wal -i $HOME/.wallpaper --iterative -o $HOME/.config/wal/sdone.sh
-
+    bindsym XF86HomePage exec --no-startup-id wal -i $HOME/.wallpaper --iterative -o $HOME/.config/wal/sdone.sh
     
 #
 # Multimedia keys

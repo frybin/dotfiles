@@ -14,7 +14,6 @@
 		},
 		"sway/window": {
             "format": "{} ",
-            "on-click": "swaymsg kill"
         },
 		"sway/workspaces": {
 			"disable-scroll": true,
@@ -112,7 +111,7 @@
 		"height": 30,
 		"modules-left": ["tray"],
 		"modules-center": ["wlr/taskbar"],
-		"modules-right": ["custom/arrow5-5","custom/updates","custom/arrow6","cpu","custom/arrow7","temperature","custom/arrow8","memory","custom/arrow9","disk","custom/power"],
+		"modules-right": ["custom/arrow10","idle_inhibitor","custom/arrow5-5","custom/updates","custom/arrow6","cpu","custom/arrow7","temperature","custom/arrow8","memory","custom/arrow9","disk","custom/power"],
 		// Modules configuration
 		"tray": {
 			"icon-size": 21,
@@ -174,6 +173,18 @@
 		},
 
 		"custom/arrow9": {
+			"format": "",
+			"tooltip": false
+		},
+
+		"idle_inhibitor": {
+			"format": "{icon} {status}",
+			"format-icons": {
+				"activated": "",
+				"deactivated": ""
+			}
+		},
+		"custom/arrow10": {
 			"format": "",
 			"tooltip": false
 		},

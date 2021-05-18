@@ -119,15 +119,16 @@ export PATH="$PATH:$HOME/go/bin:$HOME/.local/bin"
 export GOBIN="$HOME/go/bin"
 export GOPATH="$HOME/go"
 
-export MOZ_ENABLE_WAYLAND="1"
-export ECORE_EVAS_ENGINE="wayland_egl"
-export ELM_ENGINE="wayland_egl"
+#set -x ECORE_EVAS_ENGINE "wayland_egl"
+#set -x ELM_ENGINE "wayland_egl"
+#set -x MOZ_ENABLE_WAYLAND 1
+#set -x SDL_VIDEODRIVER 'wayland'
 
-
+alias kickgpg='echo UPDATESTARTUPTTY | gpg-connect-agent'
 alias cleargpg='gpg-connect-agent "scd serialno" "learn --force" /bye'
 alias mntprivate='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/Nextcloud-Private  /mnt/nfs'
 alias mntpublic='sudo mount truenas.redrybin.local:/mnt/MainPool/NC-Drive/NextCloud/NextcloudShare  /mnt/nfs'
 alias mntvideo='sudo mount truenas.redrybin.local:/mnt/MainPool/DataDrives/Videos  /mnt/nfs'
-alias wghu='wg-quick up ~/wg/ArchyX1.conf'
-alias wghd='wg-quick down ~/wg/ArchyX1.conf'
+alias wghu='wg-quick up ~/wg/wg0.conf'
+alias wghd='wg-quick down ~/wg/wg0.conf'
 alias wghs='sudo wg'
