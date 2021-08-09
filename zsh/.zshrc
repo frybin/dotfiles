@@ -17,7 +17,7 @@ setopt HIST_SAVE_NO_DUPS
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/red/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -140,3 +140,10 @@ alias mntvideo='sudo mount truenas.redrybin.local:/mnt/MainPool/DataDrives/Video
 alias wghu='wg-quick up ~/wg/wg0.conf'
 alias wghd='wg-quick down ~/wg/wg0.conf'
 alias wghs='sudo wg'
+#source /usr/share/nvm/init-nvm.sh
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

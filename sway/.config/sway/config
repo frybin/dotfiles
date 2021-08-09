@@ -50,6 +50,7 @@ exec --no-startup-id wal -R
     output "Goldstar Company Ltd 24EN33 304NDRFHD670" resolution 1920x1080 position 1920,0 background $wallpaper fill
     output "Acer Technologies K242HL T0FAA0018501" resolution 1920x1080 position 0,0 background $wallpaper fill
     output "Acer Technologies Acer ET322QR 0x0000B767" resolution 1920x1080 position 971,0 background $wallpaper fill
+    output "Samsung Electric Company C27F398 H4ZNB03673" resolution 1920x1080 position 971,0 background $wallpaper fill
 
 ### Idle configuration
 #
